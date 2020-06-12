@@ -1,0 +1,147 @@
+@mixin border-radius($property) {
+    border-radius: $property;
+    -webkit-border-radius: $property;
+    -moz-border-radius: $property;
+    -ms-border-radius: $property;
+    -o-border-radius: $property;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 800px;
+    margin: auto;
+    text-align: center;
+    p {
+        font-size: 20px;
+    }
+}
+
+.header {
+    h2 {
+        color: #333333;
+        font-weight: 400;
+        font-size: 40px;
+    }
+}
+
+.balance {
+    border-bottom: 2px solid rgb(41, 41, 41);
+    background: lightgray;
+    padding: 5px;
+    width: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+    .amount {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 0;
+    }
+}
+
+.income-expense {
+    margin-top: 60px;
+    padding: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    background: lightgray;
+    border-bottom: 2px solid rgb(41, 41, 41);
+    width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    .amount {
+        font-weight: 600;
+        font-size: 30px;
+    }
+    .expense {
+        .amount {
+            color: red;
+        }
+    }
+    .income {
+        .amount {
+            color: green;
+        }
+    }
+}
+
+.history {
+    margin: 30px auto;
+    padding: 5px;
+    width: 400px;
+    li {
+        background: lightgray;
+        margin: 10px 0;
+        padding: 10px;
+        list-style: none;
+        position: relative;
+        overflow: hidden;
+        &:hover {
+            .overlay {
+                bottom: 0;
+            }
+        }
+        .flex {
+            display: flex;
+            justify-content: space-between;
+        }
+        .overlay {
+            width: 100%;
+            left: 0;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            bottom: 100%;
+            transition: all 0.5s ease;
+            background: #df3939;
+            opacity: 0.8;
+            .remove {
+                margin-top: 8px;
+                display: block;
+                color: #ffffff;
+            }
+        }
+    }
+    .income {
+        border-bottom: 3px solid green;
+    }
+    .expense {
+        border-bottom: 3px solid red;
+    }
+}
+
+.add-transaction {
+    width: 400px;
+    margin: 30px auto;
+    text-align: left;
+    h3 {
+        color: #333333;
+        font-weight: 400;
+        text-align: center;
+    }
+    form {
+        label {
+            margin-bottom: 10px;
+            display: block;
+        };
+        .input {
+            width: 100%;
+            bottom: 1px solid #333333;
+            padding: 5px 5px;
+        }
+        .btn-submit {
+            background: #333333;
+            margin: auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            color: #fff;
+            padding: 7px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
